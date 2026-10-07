@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bookie Support</title>
+<meta name="description" content="Help for Bookie: setting up, PINs and the lock, backups, and everyday bookkeeping questions.">
+<style>
+  :root { --bg: #f6faf7; --card: #ffffff; --text: #17201b; --muted: #55635b; --accent: #1f6b4a; --rule: #d9e6de; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0f1612; --card: #17211b; --text: #e8f0ea; --muted: #9fb2a6; --accent: #6fcf9f; --rule: #28382e; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  nav { display: flex; gap: 1.25rem; margin: 0 0 1rem .25rem; font-size: .95rem; }
+  nav a { text-decoration: none; color: var(--muted); }
+  nav a[aria-current] { color: var(--accent); font-weight: 650; }
+  article { background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 1.5rem 1.5rem 2rem; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .25rem; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 .5rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 .25rem; }
+  p, li { margin: .6rem 0; }
+  ul, ol { padding-left: 1.4rem; }
+  .updated { color: var(--muted); margin-top: 0; }
+  a { color: var(--accent); }
+  strong { font-weight: 650; }
+  @media (max-width: 480px) { article { padding: 1.1rem 1rem 1.5rem; border-radius: 12px; } h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<main>
+<nav><a href="./">Privacy policy</a><a href="support.html" aria-current="page">Support</a></nav>
+<article>
+<h1>Bookie Support</h1>
+<p class="updated">Last updated: October 7, 2026</p>
+<p>Bookie keeps double-entry books on your iPhone or iPad. Answers to the most common questions are below. If yours isn't here, write to <strong><a href="mailto:rickyzombie@icloud.com">rickyzombie@icloud.com</a></strong>. We reply as soon as we can.</p>
+<h2>Getting help</h2>
+<p>When you write, it helps to include your device and iOS version, Bookie's version (shown in the App Store), and the steps that led to the problem. <strong>Please don't send PINs, account numbers or screenshots of real books.</strong> If you need to show a problem, use Settings &gt; Sample books to reproduce it with sample data.</p>
+<h2>Getting started</h2>
+<h3>How do I set up my books?</h3>
+<p>On first launch Bookie asks you to create the Admin: a name and a 6-digit PIN that isn't a repeat or a run like 123456. The Admin then adds everyone else under Settings &gt; Users &amp; roles and chooses what each person can do. Add an Accountant to enter entries and a Reviewer to approve them, then use the Ledger tab and the + button to make your first entry.</p>
+<h3>Why can't I approve my own entry?</h3>
+<p>That is deliberate. An entry moves from draft to submitted to posted, and the person who created it can never be the one who approves it. This is the basic control that stops one person entering and posting the same transaction. Sign in as someone else with the Reviewer or Admin role to approve it.</p>
+<h3>I'd like to look around with some data in it.</h3>
+<p>As Admin, open Settings &gt; Sample books &gt; Load sample books. It adds a fictional coffee roaster's books for the last three months. You can remove them again from the same place until you add entries of your own.</p>
+<h2>PINs and the lock</h2>
+<h3>I forgot my PIN.</h3>
+<p>Ask an Admin to reset it: Settings &gt; Users &amp; roles, choose the person, then Reset PIN. If you are the only Admin and you have forgotten your PIN, <strong>it cannot be recovered</strong>; there is no back door, by design. Add a second Admin as soon as you can so that this never happens, and keep regular exports (see below).</p>
+<h3>Why does Bookie ask for Face ID or my passcode?</h3>
+<p>Bookie locks itself when you leave the app, and unlocks with Face ID, Touch ID or your device passcode. An Admin can change how soon it locks, or turn the requirement off, under Settings &gt; Security. Your PIN identifies you inside Bookie on top of this.</p>
+<h3>It says too many wrong PINs.</h3>
+<p>After five wrong PINs a profile is locked for a minute. Wait, or ask an Admin to reset your PIN, which also clears the lock.</p>
+<h2>Your data</h2>
+<h3>Does Bookie sync between devices or back up to iCloud?</h3>
+<p>No. Bookie has no servers and keeps one set of books on one device, encrypted, and left out of backups. That is what keeps your data private, and it means <strong>there is no cloud copy</strong>. If you delete the app or lose the device, the books go with it.</p>
+<h3>How do I keep a copy?</h3>
+<p>Use Ledger &gt; Export to CSV or OFX regularly, for example after each month-end, and save the files somewhere you trust through the share sheet. The journal CSV can be imported back (as drafts for approval), and the OFX statement can be read by other accounting software.</p>
+<h3>How do I get my data out?</h3>
+<p>Ledger &gt; Export to CSV or OFX offers the journal, the chart of accounts, the trial balance and a bank-style statement of one account. The Books tab can also export statements to Excel.</p>
+<h2>Everyday accounting</h2>
+<h3>I posted something wrong. How do I fix it?</h3>
+<p>Posted entries are permanent. Open the entry and choose Reverse this entry, give a reason, and post the corrected entry. If the entry is in a closed period, an Admin must reopen the period first (with a reason, which is recorded in the audit log).</p>
+<h3>How do I close a month?</h3>
+<p>Ledger &gt; Period-end closing prepares the closing entries, which someone else approves. Closing waits while scheduled adjusting entries are unprepared or still drafts, so deal with Ledger &gt; Adjusting entries first. Then use Close period to lock the month.</p>
+<h3>How do I record prepaid insurance, unearned revenue or depreciation?</h3>
+<p>Enter the payment or receipt as a normal entry, then create a schedule under Ledger &gt; Adjusting entries. Each month Bookie drafts the entry that moves the amount across, for approval. Accruals, which can reverse themselves on the first of the next month, are there too.</p>
+<h3>How do I import a bank statement?</h3>
+<p>Ledger &gt; Import statements and entries accepts OFX, QFX and CSV files from your bank, and journal CSV files. Choose which account the statement belongs to and which account the other side of each line should go to. Everything arrives as drafts, and lines you've already imported are skipped.</p>
+<h3>How do I reconcile?</h3>
+<p>Ledger &gt; Bank reconciliation. Pick the account, the statement date and the statement's ending balance, then tick the lines that appear on the statement until the difference is zero. Loading the statement file ticks matches for you, and lines the books don't have, such as bank fees, can be booked right there as drafts.</p>
+<h3>How do foreign currencies work?</h3>
+<p>Accounts can be held in a foreign currency while the books stay in US dollars. Add rates under Ledger &gt; Currencies and exchange rates; each entry keeps the rate it was made with. At month-end, revalue the foreign accounts from the same screen.</p>
+<h2>Online features</h2>
+<h3>Does Bookie connect to the internet?</h3>
+<p>Only in three cases, each started or switched on by you: downloading the optional on-device AI model, asking Claude a question with your own API key (you confirm exactly what is sent, every time), and fetching the European Central Bank's public exchange rates if an Admin turns that on in Settings. See the <a href="https://ricky-zombie.github.io/bookie-privacy/">privacy policy</a> for the details.</p>
+<h2>About Bookie</h2>
+<h3>Is Bookie tax or legal advice?</h3>
+<p>No. Bookie is a bookkeeping tool. Check anything important, especially answers from the optional AI features, against your own records and a qualified professional.</p>
+<h3>Where is the privacy policy?</h3>
+<p>At <a href="https://ricky-zombie.github.io/bookie-privacy/">ricky-zombie.github.io/bookie-privacy</a>, and in the app under Settings &gt; Privacy.</p>
+<h2>Contact</h2>
+<p><a href="mailto:rickyzombie@icloud.com">rickyzombie@icloud.com</a></p>
+</article>
+</main>
+</body>
+</html>
